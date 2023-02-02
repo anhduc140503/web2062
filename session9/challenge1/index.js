@@ -1,7 +1,7 @@
 const game={
 team1: 'Bayern Munich',
 team2: 'Borrussia Dortmund',
-player:[
+players:[
 [
     'Neuer',
     'Sule',
@@ -39,3 +39,32 @@ odds:{
 }
 
 };
+//1
+const [players1,players2]= game.players;
+console.log(players1, players2); 
+//2
+const [gk,...fieldplayerss] = players1;
+console.log(gk);
+console.log(fieldplayerss);
+
+//3
+const allplayerss=[...players1,...players2];
+console.log(allplayerss);
+//4
+const playerss1Final= [...players1,'Thiago','Coutinho','Perisic'];
+console.log(playerss1Final);
+//5
+const {
+    odds:{team1,x:draw,team2},
+} =game; 
+console.log(team1,draw,team2);
+
+//6
+const printGoals = function(...players){
+console.log(players);
+console.log(players.length+" players have scored");
+}
+printGoals(...game.scored);
+//7 
+team1 < team2 && console.log('Team 1 win because',team1+' <',team2);
+// team có tỉ lế thấp hơn giành chiến thắng
